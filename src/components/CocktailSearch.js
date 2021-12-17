@@ -7,10 +7,10 @@ export default class CocktailSearch extends React.Component {
 
         const ingredientSearch = (event) => {
             
-            updateQuery = (query) => {
-                debounce(() => query(this.setState({ query }), 500))
-                this.onBookSearch(query)
-            }
+            // updateQuery = (query) => {
+            //     debounce(() => query(this.setState({ query }), 500))
+            //     this.onBookSearch(query)
+            // }
 
             console.log(event.target.value);
         }

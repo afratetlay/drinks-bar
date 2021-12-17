@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import Cocktail from './Cocktail';
+import { Container, Row } from 'react-bootstrap';
 
 export default class CocktailList extends React.Component {
     constructor(props) {
@@ -23,9 +24,14 @@ export default class CocktailList extends React.Component {
     render() {
         return (
             <div className="cocktail-list">
+            <Container>  
+                <Row>
+                  
                 {this.state.cocktails.map((cocktail) => {
-                    return <Cocktail name={cocktail.strDrink} thumb={cocktail.strDrinkThumb} key={cocktail.idDrink} />
+                    return <div className="col-6"> <Cocktail  name={cocktail.strDrink} thumb={cocktail.strDrinkThumb} key={cocktail.idDrink} /> </div>
                 })}
+                </Row>  
+            </Container>    
             </div>
         );
     }
