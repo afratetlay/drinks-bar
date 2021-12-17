@@ -1,5 +1,6 @@
 import CocktailList from './components/CocktailList'
 import CocktailSearch from './components/CocktailSearch'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
