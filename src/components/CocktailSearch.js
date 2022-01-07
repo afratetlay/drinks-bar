@@ -16,10 +16,12 @@ export default class CocktailSearch extends React.Component {
         }
 
         return (
-            <div className="cocktail-search">
-                <input type="text" id="cocktailSearch" onkeyup="processChange()" onChange={(event) => ingredientSearch(event)}></input>
-                <button type="button" id="cocktailSearchBtn">Search</button>
-            </div>
+            <>
+                {/* <div className="cocktail-search">
+                    <input type="text" id="cocktailSearch" onkeyup="processChange()" onChange={(event) => ingredientSearch(event)}></input>
+                    <button type="button" id="cocktailSearchBtn">Search</button>
+                </div> */}
+            </>
         );
     }
 }
