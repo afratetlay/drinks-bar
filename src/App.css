@@ -1,74 +1,285 @@
-.App {
-  text-align: center;
+:root {
+  --light-grey: #eee;
+  --mid-grey: #bbb;
+  --dark-grey: #333;
+  --vodka: #b4dde4;
+  --whisky: #fae2cc;
+  --champagne: #d9e09a;
+  --wine: #f0aab8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  color: var(--dark-grey);
+  position: relative;
+  background-image: linear-gradient(to left, #fff, #ccc);
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -40px;
+  left: -10vw;
+  width: 120vw;
+  height: 380px;
+  background-image: linear-gradient(to left, rgb(60, 155, 192), rgb(151, 49, 100));
+  transform: rotate(1deg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  max-width: 900px;
+}
+
+@keyframes fadeIn {
+  from  {opacity: 0;}
+  to    {opacity: 1;}
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bolder;
+  letter-spacing: 5px;
+  color: white;
+  padding-top: 30px;
+}
+
+.search-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  padding: 40px;
+  border-top: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--light-grey);
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.search-row button {
+  padding-top: 90px;
+  background: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--mid-grey);
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  transition: .2s ease-out;
+}
+
+.search-row button::before {
+  transition-delay: .25s;
+}
+.search-row button::before,
+.search-row button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--light-grey);
+  background-position: center;;
+  background-size: 40px;
+  background-repeat: no-repeat;
+}
+
+.search-row button.active {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.search-row button#vodka::before {
+  background-image: url('/src/icons/vodka-ln.png');
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-row button#vodka.active::before {
+  background-color: var(--vodka);
+  background-image: url('/src/icons/vodka.png');
 }
 
-.cocktail{
-  padding-top: 34px; 
-    border-style: solid;
-    padding: 30px;
-    border-radius: 22%;
-    background: linear-gradient(#22c1c3, #fdbb2d);
+.search-row button#whisky::before {
+  background-image: url('/src/icons/whisky-ln.png');
 }
 
-.cocktail:hover{
-  background: linear-gradient(#fdbb2d, #22c1c3);
+.search-row button#whisky.active::before {
+  background-color: var(--whisky);
+  background-image: url('/src/icons/whisky.png');
 }
 
-h1{
-  color: white;
+.search-row button#wine::before {
+  background-image: url('/src/icons/wine-ln.png');
+}
+
+.search-row button#wine.active::before {
+  background-color: var(--wine);
+  background-image: url('/src/icons/wine.png');
+}
+
+.search-row button#champagne::before {
+  background-image: url('/src/icons/champagne-ln.png');
+}
+
+.search-row button#champagne.active::before {
+  background-color: var(--champagne);
+  background-image: url('/src/icons/champagne.png');
+}
+
+.search-row button::after {
+  opacity: 0;
+}
+
+.search-row button#vodka::after {
+  background-color: var(--vodka);
+}
+
+.search-row button#whisky::after {
+  background-color: var(--whisky);
+}
+
+.search-row button#wine::after {
+  background-color: var(--wine);
+}
+
+.search-row button#champagne::after {
+  background-color: var(--champagne);
+}
+
+.search-row button.active::after {
+  background-color:s;
+  transform: scale(0);
+  animation: pop .5s ease-in forwards;
+}
+
+@keyframes pop {
+  0%      { transform: scale(0); opacity: .85;}
+  50%     { transform: scale(1); opacity: .85;}
+  70%     { transform: scale(1); opacity: 0;}
+  100%    { transform: scale(0); opacity: 0;}
+}
+
+.drink-card-wrap {
+  padding: 30px 12px;
+}
+
+.drink-card {
+  opacity: 0;
+  animation: fadeIn .5s .4s forwards ease-out;
+  position: relative;
+  background: white;
+}
+
+.drink-card::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,.2);
+  opacity: .5;
+  transition: opacity .3s ease-out;
+}
+
+.drink-card:hover::after {
+  opacity: 1;
+}
+
+
+.drink-card img {
+  width: 100%;
+}
+
+.drink-card .img-wrap {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.drink-card .img-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-grey);
+  opacity: .4;
+  transition: opacity .3s ease-out;
+}
+
+.drink-card:hover .img-wrap::after {
+  opacity: 0;
+}
+
+.drink-card-content {
+  padding: 30px;
+}
+
+.drink-card h3 {
   font-size: 18px;
-    padding-bottom: 10px;
+  min-height: 46px;
+  color: var(--dark-grey);
 }
 
-.row{
-  padding-top: 20px;
+.drink-card button {
+  background: none;
+  border: none;
+  padding: 10px 20px 10px 0;
+  position: relative;
+  font-size: 11px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 
-.col-6 {
-  padding-bottom: 20px;
-  width: 25%;
+.drink-card button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--dark-grey);
+  transform: scaleX(.25);
+  transform-origin: left;
+  transition: .3s ease-out;
 }
 
-img {
-  border-radius: 25%;
+.drink-card button:hover::before {
+  transform: scaleX(1);
 }
 
-.cocktail-list{
-  background-color: burlywood;
+.drink-card button::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-image: url(/src/icons/play.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
 
+.drink-card button:hover::after {
+  transition: opacity .3s ease-out;
+  animation: hov 1s .3s linear infinite;
+} 
+
+@keyframes hov {
+  0%    {transform: translateX(0);}
+  8%     {transform: translateX(4px)}
+  10%     {transform: translateX(6px)}
+  12%     {transform: translateX(4px)}
+  20%     {transform: translateX(0)}
+  30%    {transform: translateX(0);}
+  38%     {transform: translateX(4px)}
+  40%     {transform: translateX(6px)}
+  42%     {transform: translateX(4px)}
+  50%     {transform: translateX(0)}
 }
