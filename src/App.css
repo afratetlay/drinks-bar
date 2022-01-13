@@ -2,14 +2,29 @@
   --light-grey: #eee;
   --mid-grey: #bbb;
   --dark-grey: #333;
-  --vodka: #b3dfe6;
-  --whisky: #fadbbe;
-  --champagne: #dee3a6;
-  --wine: #ffb5c4;
+  --vodka: #b4dde4;
+  --whisky: #fae2cc;
+  --champagne: #d9e09a;
+  --wine: #f0aab8;
 }
 
 body {
   color: var(--dark-grey);
+  position: relative;
+  background-image: linear-gradient(to left, #fff, #ccc);
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -40px;
+  left: -10vw;
+  width: 120vw;
+  height: 380px;
+  background-image: linear-gradient(to left, rgb(60, 155, 192), rgb(151, 49, 100));
+  transform: rotate(1deg);
 }
 
 .container {
@@ -25,7 +40,7 @@ h1 {
   font-size: 28px;
   font-weight: bolder;
   letter-spacing: 5px;
-  color: var(--dark-grey);
+  color: white;
   padding-top: 30px;
 }
 
@@ -35,8 +50,10 @@ h1 {
   justify-content: space-around;
   width: 100%;
   padding: 40px;
+  border-top: 1px solid var(--light-grey);
   border-bottom: 1px solid var(--light-grey);
-  margin-bottom: 40px
+  margin-top: 40px;
+  margin-bottom: 80px;
 }
 
 .search-row button {
@@ -72,7 +89,7 @@ h1 {
 }
 
 .search-row button.active {
-  color: var(--dark-grey);
+  color: white;
 }
 
 .search-row button#vodka::before {
@@ -145,14 +162,14 @@ h1 {
 }
 
 .drink-card-wrap {
-  padding: 20px;
+  padding: 30px 12px;
 }
 
 .drink-card {
-  padding: 30px;
   opacity: 0;
   animation: fadeIn .5s .4s forwards ease-out;
   position: relative;
+  background: white;
 }
 
 .drink-card::after {
@@ -171,6 +188,7 @@ h1 {
 .drink-card:hover::after {
   opacity: 1;
 }
+
 
 .drink-card img {
   width: 100%;
@@ -195,6 +213,10 @@ h1 {
 
 .drink-card:hover .img-wrap::after {
   opacity: 0;
+}
+
+.drink-card-content {
+  padding: 30px;
 }
 
 .drink-card h3 {

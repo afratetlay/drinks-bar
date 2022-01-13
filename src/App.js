@@ -27,8 +27,10 @@ class App extends Component {
                 alt={cocktail.strDrink}
               />
             </div>
-            <h3>{cocktail.strDrink}</h3>
-            <button>Find out more</button>
+            <div className="drink-card-content">
+              <h3>{cocktail.strDrink}</h3>
+              <button>Find out more</button>
+            </div>
           </div>
         </div>
       ))
@@ -61,28 +63,28 @@ class App extends Component {
                 type="button"
                 onClick={this.clickHandler}
                 className={this.state.active ? 'active' : null}
-                value="gin"
+                value="vodka"
               >Vodka</button>
               <button 
                 id="whisky"
                 type="button"
                 onClick={this.clickHandler}
                 className={this.state.active ? 'active' : null}
-                value="Vodka"
+                value="whisky"
               >Whisky</button>
               <button 
                 id="wine"
                 type="button"
                 onClick={this.clickHandler}
                 className={this.state.active ? 'active' : null}
-                value="whisky"
+                value="wine"
               >Wine</button>
               <button 
                 id="champagne"
                 type="button"
                 onClick={this.clickHandler}
                 className={this.state.active ? 'active' : null}
-                value="rum"
+                value="champagne"
               >Champagne</button>
             </div>
           </div>
