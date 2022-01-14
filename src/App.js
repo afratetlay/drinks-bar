@@ -1,14 +1,16 @@
-import CocktailList from './components/CocktailList'
-import CocktailSearch from './components/CocktailSearch'
+import React from "react";
+import CocktailList from './components/CocktailList';
+import Product from './components/Product';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
 function App() {
+  
   return (
     <div className="App">
-      <CocktailSearch />
-      <CocktailList />
+      <CocktailList  />
     </div>
   );
 }
