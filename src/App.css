@@ -56,6 +56,19 @@ h1 {
   margin-bottom: 80px;
 }
 
+.search-row input {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+}
+
+.search-row input:focus {
+  outline: none;
+  box-shadow: 0 0 30px rgba(0,0,0,.4);
+}
+
 .search-row button {
   padding-top: 90px;
   background: none;

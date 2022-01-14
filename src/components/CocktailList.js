@@ -1,5 +1,6 @@
 import React from 'react';
 import Cocktail from './Cocktail';
+import Buttons from './Buttons';
 import { Container, Row } from 'react-bootstrap';
 import _ from 'lodash';
 
@@ -48,6 +49,7 @@ export default class CocktailList extends React.Component {
                 <Row>
                     <div className="cocktail-search search-row">
                         <input type="text" placeholder="Search ingredient" id="cocktailSearch" onChange={(event) => searchCocktail(event)}></input>
+                        <Buttons />
                     </div>
                 </Row>
 
