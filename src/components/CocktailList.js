@@ -46,7 +46,7 @@ export default class CocktailList extends React.Component {
             <Container>
 
                 <Row>
-                    <div className="cocktail-search">
+                    <div className="cocktail-search search-row">
                         <input type="text" placeholder="Search ingredient" id="cocktailSearch" onChange={(event) => searchCocktail(event)}></input>
                     </div>
                 </Row>
