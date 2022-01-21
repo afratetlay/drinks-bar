@@ -1,6 +1,8 @@
 import React from 'react';
+
 import Cocktail from './Cocktail';
 import Buttons from './Buttons';
+
 import { Container, Row } from 'react-bootstrap';
 import _ from 'lodash';
 
@@ -43,39 +45,48 @@ export default class CocktailList extends React.Component {
         }, 500);
 
         return (
+
+            <div className='home-page-wrapper'>
             
-            <Container>
+                <Container>
 
-                <Row>
-                    <div className="cocktail-search search-row">
-                        <input type="text" placeholder="Search ingredient" id="cocktailSearch" onChange={(event) => searchCocktail(event)}></input>
-                        <Buttons />
-                    </div>
-                </Row>
+                    <Row>
+                        <div className="cocktail-search search-row">
+                            <input type="text" placeholder="Search ingredient" id="cocktailSearch" onChange={(event) => searchCocktail(event)}></input>
+                            <h1>Quick search by popular alcoholic drinks</h1>
+                            <div className="buttons-container">
+                                <Buttons searchCocktail={searchCocktail} />
+                            </div>
+                        </div>
+                    </Row>
 
-                <Row>
+                    <Row>
 
-                    {this.state.searchCocktails.length > 0 && this.state.searchCocktails.map((cocktail) => {
-                        return (
-                        <Cocktail 
-                            key={cocktail.idDrink}
-                            name={cocktail.strDrink}
-                            thumb={cocktail.strDrinkThumb}
-                        />)
-                    })}
+                        {this.state.searchCocktails.length > 0 && this.state.searchCocktails.map((cocktail) => {
+                            return (
+                            <Cocktail 
+                                key={cocktail.idDrink}
+                                id={cocktail.idDrink}
+                                name={cocktail.strDrink}
+                                thumb={cocktail.strDrinkThumb}
+                            />)
+                        })}
 
-                    {this.state.searchCocktails.length === 0 && this.state.cocktails.map((cocktail) => {
-                        return (
-                        <Cocktail
-                            key={cocktail.idDrink}
-                            name={cocktail.strDrink}
-                            thumb={cocktail.strDrinkThumb}
-                        />)
-                    })}
+                        {this.state.searchCocktails.length === 0 && this.state.cocktails.map((cocktail) => {
+                            return (
+                            <Cocktail
+                                key={cocktail.idDrink}
+                                id={cocktail.idDrink}
+                                name={cocktail.strDrink}
+                                thumb={cocktail.strDrinkThumb}
+                            />)
+                        })}
 
-                </Row> 
+                    </Row> 
 
-            </Container>
+                </Container>
+
+            </div>
             
         );
     }

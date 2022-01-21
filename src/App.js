@@ -1,6 +1,7 @@
 import React from "react";
-import CocktailList from './components/CocktailList';
-// import Product from './components/Product';
+import CocktailList from './components/CocktailList'
+import SingleCocktailPage from './components/SingleCocktailPage'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -9,9 +10,21 @@ import './App.css';
 function App() {
   
   return (
-    <div className="App">
-      <CocktailList  />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+
+          <Route exact path="/">
+            <CocktailList />
+          </Route>
+
+          <Route exact path="/cocktail/:id">
+            <SingleCocktailPage />
+          </Route>
+
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
@@ -19,7 +32,6 @@ function App() {
 // // import CocktailList from './components/CocktailList'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './App.css';
-
 
 // class App extends Component {
 

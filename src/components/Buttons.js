@@ -3,12 +3,11 @@ import React from 'react';
 
 
 export default class Buttons extends React.Component {
-
     constructor(props) {
     super(props);
     this.state = {
             active: false
-        }
+        };
     }
 
     clickHandler = (e) => {
@@ -17,12 +16,23 @@ export default class Buttons extends React.Component {
         const btns = document.querySelectorAll('.search-row button');
         btns.forEach(btn => btn.classList.remove('active'));
         e.target.className = 'active';
-        
+
+        const selected = e.target.value;
+        console.log(selected);
+
+        const input = document.getElementById('cocktailSearch');
+        console.log(input);
+
+        input.value = selected;
+
+        this.props.searchCocktail(e);
+
         // const selected = e.target.value;
         // const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${selected}`;
         //     fetch(url)
         //       .then(res => res.json())
         //       .then(data => this.setState({ cocktails: data }));
+
     }
 
     render() {
