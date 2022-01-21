@@ -44,26 +44,29 @@ const SingleCocktailPage = () => {
 
                     <main className='scp-main'>
 
-                        <h2>Ingredients Required</h2>
+                        <h2>Ingredients &amp; Measures Required</h2>
 
-                            <p>{cocktail.strIngredient1}</p>
-                            <p>{cocktail.strIngredient2}</p>
-                            <p>{cocktail.strIngredient3}</p>
-                            <p>{cocktail.strIngredient4}</p>
-                            <p>{cocktail.strIngredient5}</p>
-                            <p>{cocktail.strIngredient6}</p>
-                            <p>{cocktail.strIngredient7}</p>
-                            <p>{cocktail.strIngredient8}</p>
-                            <p>{cocktail.strIngredient9}</p>
-                            <p>{cocktail.strIngredient10}</p>
-                            <p>{cocktail.strIngredient11}</p>
-                            <p>{cocktail.strIngredient12}</p>
-                            <p>{cocktail.strIngredient13}</p>
-                            <p>{cocktail.strIngredient14}</p>
-                            <p>{cocktail.strIngredient15}</p>
+                        <p>{cocktail.strIngredient1} {cocktail.strMeasure1}</p>
+                        <p>{cocktail.strIngredient2} {cocktail.strMeasure2}</p>
+                        <p>{cocktail.strIngredient3} {cocktail.strMeasure3}</p>
+                        <p>{cocktail.strIngredient4} {cocktail.strMeasure4}</p>
+                        <p>{cocktail.strIngredient5} {cocktail.strMeasure5}</p>
+                        <p>{cocktail.strIngredient6} {cocktail.strMeasure6}</p>
+                        <p>{cocktail.strIngredient7} {cocktail.strMeasure7}</p>
+                        <p>{cocktail.strIngredient8} {cocktail.strMeasure8}</p>
+                        <p>{cocktail.strIngredient9} {cocktail.strMeasure9}</p>
+                        <p>{cocktail.strIngredient10} {cocktail.strMeasure10}</p>
+                        <p>{cocktail.strIngredient11} {cocktail.strMeasure11}</p>
+                        <p>{cocktail.strIngredient12} {cocktail.strMeasure12}</p>
+                        <p>{cocktail.strIngredient13} {cocktail.strMeasure13}</p>
+                        <p>{cocktail.strIngredient14} {cocktail.strMeasure14}</p>
+                        <p>{cocktail.strIngredient15} {cocktail.strMeasure15}</p>
 
                         <h2>Instructions</h2>
                         <p>{cocktail.strInstructions}</p>
+
+                        <h2>Preffered Serving Glass</h2>
+                        <p>{cocktail.strGlass}</p>
 
                     </main>
 
