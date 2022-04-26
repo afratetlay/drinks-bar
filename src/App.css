@@ -441,3 +441,32 @@ h1 {
   }
 
 }
+
+.scp-ingredient-icon{
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+}
+.scp-measure-icon{
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+}
+.scp-cocktail-icon{
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+h2{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.scp-cocktail-text{
+  padding-bottom: 20px;
+}

@@ -4,6 +4,9 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Pin from '../icons/pin.png'
 import HomeIcon from '../icons/home-icon.png'
+import IngredientIcon from '../icons/ingredient-icon.png'
+import MeasureIcon from '../icons/measure-icon.png'
+import CocktailIcon from '../icons/cocktail-icon.png'
 
 const SingleCocktailPage = () => {
     const [cocktail, setCocktail] = useState({});
@@ -44,8 +47,8 @@ const SingleCocktailPage = () => {
 
                     <main className='scp-main'>
 
-                        <h2>Ingredients &amp; Measures Required</h2>
-
+                        
+                        <h2><img src={ MeasureIcon } className='scp-measure-icon'/>Ingredients &amp; Measures Required</h2>
                         <p>{cocktail.strIngredient1} {cocktail.strMeasure1}</p>
                         <p>{cocktail.strIngredient2} {cocktail.strMeasure2}</p>
                         <p>{cocktail.strIngredient3} {cocktail.strMeasure3}</p>
@@ -62,11 +65,12 @@ const SingleCocktailPage = () => {
                         <p>{cocktail.strIngredient14} {cocktail.strMeasure14}</p>
                         <p>{cocktail.strIngredient15} {cocktail.strMeasure15}</p>
 
-                        <h2>Instructions</h2>
+                        <h2><img src={ IngredientIcon } className='scp-ingredient-icon'/>Instructions</h2>
                         <p>{cocktail.strInstructions}</p>
 
-                        <h2>Preffered Serving Glass</h2>
+                        <h2><img src={ CocktailIcon } className='scp-cocktail-icon'/>Preffered Serving Glass</h2>
                         <p>{cocktail.strGlass}</p>
+                        <p class="scp-cocktail-text"></p>
 
                     </main>
 
